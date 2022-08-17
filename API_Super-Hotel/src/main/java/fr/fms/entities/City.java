@@ -40,4 +40,16 @@ public class City {
     @JoinColumn(name = "city_id")
     private List<Hotel> hotels;
 
+    public City(Long id, String name, String zipCode, String country) {
+        this.id = id;
+        this.name = name;
+        this.zipCode = zipCode;
+        this.country = country;
+    }
+
+    public City(String name, String zipCode, String country) {
+        this.name = name;
+        this.zipCode = zipCode;
+        this.country = country;
+    }
 }

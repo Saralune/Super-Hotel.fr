@@ -36,6 +36,8 @@ public class Hotel {
     @Max(5)
     private int rating;
 
+    private String img;
+
     @NotNull
     private int availableRooms;
 
@@ -46,5 +48,5 @@ public class Hotel {
     private City city;
 
     @ManyToOne
-    private Users user;
+    private Users users;
 }

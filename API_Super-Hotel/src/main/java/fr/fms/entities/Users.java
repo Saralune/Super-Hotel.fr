@@ -6,6 +6,7 @@ package fr.fms.entities;
 import java.util.List;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
@@ -28,7 +29,8 @@ public class Users {
     private Long id;
 
     @NotNull
-    @Pattern(regexp="/[^@ \\t\\r\\n\\/]+@[^@ \\t\\r\\n]+\\.[^@ \\t\\r\\n]+/gm", message="L'email doit être de forme exemple@test.fr.")
+    //@Pattern(regexp="/[^@ \\t\\r\\n\\/]+@[^@ \\t\\r\\n]+\\.[^@ \\t\\r\\n]*+/gm", message="L'email doit être de forme exemple@test.fr.")
+    @Email
     private String mail;
 
     @NotNull
@@ -88,7 +90,15 @@ public class Users {
         this.active = active;
     }
 
-//    public void setRoles(List<Role> roles) {
+    public Users(Long id, String mail, String password, String name, Boolean active) {
+        this.id = id;
+        this.mail = mail;
+        this.password = password;
+        this.name = name;
+        this.active = active;
+    }
+
+    //    public void setRoles(List<Role> roles) {
 //        this.role=roles;
 //    }
 //
