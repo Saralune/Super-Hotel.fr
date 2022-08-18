@@ -34,7 +34,7 @@ public class CityBusinessImpl implements Business<City> {
         return cityRepository.findById(id);
     }
 
-    public List<City> readHotelsByNameContains(String description) {
+    public List<City> readHotelsByNameContains(String description) throws Exception{
         return cityRepository.findByNameContains(description);
     }
 }

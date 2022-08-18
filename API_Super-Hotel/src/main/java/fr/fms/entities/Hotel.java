@@ -49,4 +49,16 @@ public class Hotel {
 
     @ManyToOne
     private Users users;
+
+    public Hotel(String name, String phone, String address, int rating, String img, int availableRooms, double lowerPrice, City city, Users users) {
+        this.name = name;
+        this.phone = phone;
+        this.address = address;
+        this.rating = rating;
+        this.img = img;
+        this.availableRooms = availableRooms;
+        this.lowerPrice = lowerPrice;
+        this.city = city;
+        this.users = users;
+    }
 }

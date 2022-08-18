@@ -90,6 +90,17 @@ public class Users {
         this.active = active;
     }
 
+    /**
+     * @param mail
+     * @param password
+     * @param active
+     */
+    public Users(@NotNull String mail, @NotNull String password, @NotNull Boolean active) {
+        this.mail = mail;
+        this.password = password;
+        this.active = active;
+    }
+
     public Users(Long id, String mail, String password, String name, Boolean active) {
         this.id = id;
         this.mail = mail;
@@ -98,11 +109,4 @@ public class Users {
         this.active = active;
     }
 
-    //    public void setRoles(List<Role> roles) {
-//        this.role=roles;
-//    }
-//
-//    public List<Role> getRoles() {
-//        return role;
-//    }
 }

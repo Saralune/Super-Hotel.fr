@@ -44,7 +44,7 @@ public class CityController {
     }
 
     @GetMapping("/research/{name}")
-    public List<City> getHotelsBySearch(@PathVariable("name") String name) {
+    public List<City> getHotelsBySearch(@PathVariable("name") String name) throws Exception {
         List<City> citiesBySearch = cityBusiness.readHotelsByNameContains(name);
         return citiesBySearch;
     }
