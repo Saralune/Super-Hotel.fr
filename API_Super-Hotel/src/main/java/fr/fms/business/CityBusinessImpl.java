@@ -2,6 +2,7 @@ package fr.fms.business;
 
 import fr.fms.dao.CityRepository;
 import fr.fms.entities.City;
+import fr.fms.entities.Hotel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,5 +32,9 @@ public class CityBusinessImpl implements Business<City> {
     @Override
     public Optional<City> readOneById(Long id) {
         return cityRepository.findById(id);
+    }
+
+    public List<City> readHotelsByNameContains(String description) {
+        return cityRepository.findByNameContains(description);
     }
 }

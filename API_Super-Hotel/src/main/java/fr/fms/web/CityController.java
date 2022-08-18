@@ -42,4 +42,10 @@ public class CityController {
     public void deleteCity(@PathVariable("id") Long id) throws Exception{
         cityBusiness.deleteOne(id);
     }
+
+    @GetMapping("/research/{name}")
+    public List<City> getHotelsBySearch(@PathVariable("name") String name) {
+        List<City> citiesBySearch = cityBusiness.readHotelsByNameContains(name);
+        return citiesBySearch;
+    }
 }
